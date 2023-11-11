@@ -1,0 +1,43 @@
+/* 
+    Feuille de style pour TP final 
+
+    * Auteurs: Clovis Gauthier & Ryan Ao
+    * Remise: ?
+    * Présentation: 12 décembre 2023 
+*/
+
+/* Réinitialisation supplémentaire */
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* Variables personnalisées */
+:root {
+    --couleurFond: #ffffff;
+    --couleurTextePrincipal: #8428AD;
+    --couleurTexteSecondaire: #AE86B7;
+    --couleurBordure: #707070;
+    --couleurBouton: #31488A;
+}
+
+/* Importation polices */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url(../polices/HelveticaNeue-Light.otf);
+}
+
+/* Mise en page générale */
+body {
+    background-color: var(--couleurFond);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Titre + Nav */
+
+header {
+    background-color: green;
+    width: 100vw;
+    height: 10vh;
+}
+
+
