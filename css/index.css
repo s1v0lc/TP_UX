@@ -18,6 +18,16 @@
     --couleurTexteSecondaire: #AE86B7;
     --couleurBordure: #707070;
     --couleurBouton: #31488A;
+    --couleurPanierSurvol: #000000;
+    --couleurRabais: red;
+}
+/* Paramètres police material symbols */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 /* Importation polices */
@@ -32,12 +42,160 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Titre + Nav */
+/*
+    Entête + Navigation 
+*/
 
 header {
-    background-color: green;
+    background-color: var(--couleurTextePrincipal);
     width: 100vw;
-    height: 10vh;
+    padding: 20px 5vw;
+    position: relative; /*pour positionner le logIn en absolute*/
+}
+/* Entête */
+.entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.logo img { /*image du logo*/
+    border-radius: 20px;
+}
 
+.barreRecherche {
+    width: 40vw;
+    height: 50px;
+    background-color: var(--couleurFond);
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1.5vw;
+    margin: 0 1vw;
+    font-size: 2rem;
+}
+
+.loupe { /*icône*/
+    cursor: pointer;
+    font-size: 40px;
+    color: var(--couleurTextePrincipal);
+}
+
+.rabais , .panier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--couleurFond);
+    cursor: pointer;
+}
+
+.rabais span:first-of-type, .panier span:first-of-type { /*icônes*/
+    font-size: 3rem;
+    transition: color 0.2s ease-in-out;
+}
+.rabais span:last-of-type, .panier span:last-of-type { /*texte*/
+    text-align: center;
+}
+
+.logIn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 71%;
+    right: 5vw;
+    color: var(--couleurFond);
+    cursor: pointer;
+}
+
+.logIn span:first-of-type { /*icône*/
+    font-size: 2rem;
+}
+/* Survol des boutons */
+.rabais:hover span:last-of-type, .panier:hover span:last-of-type { /*texte*/
+    text-decoration: underline;
+}
+.rabais:hover span:first-of-type { /*icône rabais*/
+    color: var(--couleurRabais);
+}
+.panier:hover span:first-of-type { /*icône panier*/
+    color: var(--couleurPanierSurvol);
+}
+
+.logIn:hover span:last-of-type { /*texte*/
+    text-decoration: underline;
+}
+/* Navigation */
+nav { /*barre de navigation*/
+    position: relative;
+    background-color: var(--couleurFond);
+    display: flex;
+    align-items: stretch;
+    width: 70vw;
+    height: 45px;
+    border-radius: 50px;
+    margin-top: 20px;
+    overflow: hidden;
+    border: 1px solid var(--couleurFond);
+}
+
+ul { /*liste qui regroupe les onglets*/
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3%;
+    transition: background-color 0.3s linear;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+li::before { /*barre animée lors du hover*/
+    content: "";
+    position: absolute;
+    top: 95%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--couleurFond);
+    transform: translate(-101%);
+    transition: all 0.3s ease-in-out;
+}
+/* Survol d'un onglet du menu */
+li:hover {
+    background-color: var(--couleurTextePrincipal);
+}
+
+li:hover::before {
+    transform: translate(0);
+}
+li:hover a {
+    color: var(--couleurFond);
+}
+
+a {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 550;
+}
+
+/* 
+    Main
+ */
+
+/* 
+    Footer
+ */
