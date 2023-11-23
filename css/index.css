@@ -2,8 +2,8 @@
     Feuille de style pour TP final 
 
     * Auteurs: Clovis Gauthier & Ryan Ao
-    * Remise: ?
-    * Présentation: 12 décembre 2023 
+    * Remise: 15 décembre sur LÉA
+    * Présentation: 12 décembre 2023 (~11h20)
 */
 
 /* Réinitialisation supplémentaire */
@@ -41,12 +41,12 @@
 body {
     background-color: var(--couleurFond);
     font-family: Arial, Helvetica, sans-serif;
+    /* min-width: 500px; */
 }
 
 /*
     Entête + Navigation 
 */
-
 header {
     background-color: var(--couleurTextePrincipal);
     width: 100vw;
@@ -72,6 +72,8 @@ header {
 }
 
 .logo img { /*image du logo*/
+    width: 150px;
+    height: auto;
     border-radius: 20px;
 }
 
@@ -94,7 +96,7 @@ header {
     color: var(--couleurTextePrincipal);
 }
 
-.rabais , .panier {
+.rabais, .panier {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,21 +142,33 @@ header {
 
 /* Navigation */
 nav { /*barre de navigation*/
-    position: relative;
+    animation: "";
+    position: absolute;
     background-color: var(--couleurFond);
     display: none; /* Retiré pour mobile*/
     align-items: stretch;
-    width: 70vw;
-    height: 45px;
+    width: 90vw;
+    height: 70vh;
     border-radius: 50px;
     margin-top: 20px;
     overflow: hidden;
     border: 1px solid var(--couleurFond);
 }
 
+.ouvrirMenu { /*classe ajoutée par JS*/
+    animation: animerMenu 0.5s forwards ease-out;
+    display: flex;
+}
+
+.fermerMenu { /*classe ajoutée par JS*/
+    animation: animerMenu 0.5s  infinite reverse ease-in;
+    display: flex;
+}
+
 ul { /*liste qui regroupe les onglets*/
     list-style: none;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: stretch;
     width: 100%;
@@ -163,7 +177,8 @@ ul { /*liste qui regroupe les onglets*/
     flex-grow: 1;
 }
 
-li{
+li {
+    height: 100%;
     position: relative;
     display: flex;
     align-items: center;
@@ -185,6 +200,12 @@ li::before { /*barre animée lors du hover*/
     transform: translate(-101%);
     transition: all 0.3s ease-in-out;
 }
+
+nav a {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
 /* Survol d'un onglet du menu */
 li:hover {
     background-color: var(--couleurTextePrincipal);
@@ -193,16 +214,10 @@ li:hover {
 li:hover::before {
     transform: translate(0);
 }
+
 li:hover a {
     color: var(--couleurFond);
 }
-
-a {
-    font-size: 1rem;
-    text-align: center;
-    font-weight: 550;
-}
-
 /* 
     Main
  */
@@ -214,14 +229,13 @@ a {
  /* 
     Requêtes Médias
  */
-
- @media screen and (min-width :992px) {   
+ @media screen and (min-width: 992px) {   
     /* Changement d'affichage du Menu sur PC */
     .menuBurger {
         display: none;
     }
 
-    .barreRecherche, nav {
+    .barreRecherche {
         display: flex;
     }
 
@@ -235,5 +249,20 @@ a {
 
     .rabais span:last-of-type, .panier span:last-of-type, .logIn span:last-of-type { /*texte*/
         display: flex;
+    }
+
+    nav {
+        position: relative;
+        display: flex;
+        width: 70vw;
+        height: 45px;
+    }
+
+    ul {
+        flex-direction: row;
+    }
+
+    nav a  {
+        font-size: 1rem;
     }
  }

@@ -3,6 +3,7 @@ Complété:
 
 En cours:
     Menu pc responsive
-    Menu mobile
+    Style menu mobile
 
 À faire:
+    Régler bug d'animation de fermeture

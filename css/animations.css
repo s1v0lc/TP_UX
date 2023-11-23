@@ -1,0 +1,13 @@
+/* 
+    Feuille de Style pour les animations 
+*/
+
+/* Animation gauche <=> droite quand on clique sur le menu burger  */
+@keyframes animerMenu {
+    from {
+        transform: translate(-100%);
+    }
+    to {
+        transform: translate(0);
+    }
+}
