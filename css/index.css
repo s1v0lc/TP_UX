@@ -142,7 +142,7 @@ header {
 
 /* Navigation */
 nav { /*barre de navigation*/
-    animation: "";
+    animation: none;
     position: absolute;
     background-color: var(--couleurFond);
     display: none; /* Retiré pour mobile*/
