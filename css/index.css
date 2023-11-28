@@ -10,6 +10,8 @@
 * {
     box-sizing: border-box;
     text-decoration: none;
+    margin: 0;
+    padding: 0;
 }
 /* Variables personnalisées */
 :root {
@@ -49,7 +51,7 @@ body {
 */
 header {
     background-color: var(--couleurTextePrincipal);
-    width: 100vw;
+    /* width: 100vw; */
     padding: 20px 5vw;
     position: relative; /*pour positionner le logIn en absolute*/
     user-select: none;
@@ -177,7 +179,7 @@ ul { /*liste qui regroupe les onglets*/
     flex-grow: 1;
 }
 
-li {
+nav li {
     height: 100%;
     position: relative;
     display: flex;
@@ -220,8 +222,146 @@ li:hover a {
 }
 /* 
     Main
- */
+*/
+main {
+    margin: 0 auto;
+    width: 80vw;
+    padding-top: 5vh;
+}
 
+main div.carousel{
+    display: flex;
+    justify-content: space-between;
+}
+
+div.carousel img{
+    border-radius: 0;
+    width: 15vw;
+    height: 15vh;
+    object-fit: contain;
+}
+
+.article{
+    padding-top: 5vh;
+}
+
+div div img{
+    width: 100%;
+}
+
+.produit{
+    width: 80%;
+}
+
+main>div>div div~div{
+    padding-top: 2.5vh;
+}
+/* 
+    Panier
+*/
+h1 { /*titre*/
+    color: var(--couleurTextePrincipal);
+    font-size: 3rem;
+    text-align: center;
+}
+/* liste des produits */
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: solid 2px var(--couleurLogInSurvol);
+    border-bottom: solid 2px var(--couleurLogInSurvol);
+}
+
+.produitPanier {
+    border-bottom: solid 1px var(--couleurLogInSurvol);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.imgProduit img{
+    /* width: 150px;
+    height: 150px; */
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nomPrix {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.nom, .prix {
+    color: var(--couleurTextePrincipal);
+    font-size: 1.5rem;
+}
+
+.nom {
+    font-weight: bold;
+}
+
+.exposant { /*99$*/
+    vertical-align: super;
+    font-size: 1rem;
+}
+
+.qte {
+    display: flex;
+    justify-content: center;
+    column-gap: 5vw;
+    align-items: center;
+}
+
+.boiteNb {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 50px;
+}
+.boiteNb p { /* - et + */
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--couleurTexteSecondaire);
+    width: 10vw;
+    text-align: center;
+    padding-top: 5px;
+} 
+
+.boiteNb p:nth-child(2) {
+    border-left: solid 1px var(--couleurPanierSurvol);
+    border-right: solid 1px var(--couleurPanierSurvol);
+    font-size: 1.5rem;
+    font-weight: unset;
+    padding-top: 10px;
+    width: 18vw;
+}
+
+.boiteNb {
+    border: solid 1px var(--couleurPanierSurvol);
+}
+
+.total {
+    font-size: 1.5rem;
+    color: var(--couleurTextePrincipal);
+}
+
+.retirer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    color: var(--couleurTextePrincipal);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
 /* 
     Footer
  */
@@ -264,5 +404,50 @@ li:hover a {
 
     nav a  {
         font-size: 1rem;
+    }
+
+    /* Main grand écran */
+    
+    main{
+        margin: 0 auto;
+        width: 80vw;
+        padding-top: 5vh;
+    }
+    
+    main div.carousel{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    div.carousel img{
+        border-radius: 0;
+        width: 15vw;
+        height: 15vh;
+        object-fit: contain;
+    }
+    
+    div div img{
+        width: 10vw;
+        object-fit: contain;
+    }
+
+    .produit{
+        width: 35vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .article{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 5vh;
+    }
+    
+    main>div>div div~div{
+        padding-top: 2.5vh;
+    }
+    
+    .item{
+        display: none;
     }
  }
