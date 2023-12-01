@@ -1,0 +1,135 @@
+/* 
+    Feuille de style pour TP final 
+
+    * Auteurs: Clovis Gauthier & Ryan Ao
+    * Remise: 15 décembre sur LÉA
+    * Présentation: 12 décembre 2023 (~11h20)
+*/
+/* 
+    Panier
+*/
+h1 { /*titre*/
+    color: var(--couleurTextePrincipal);
+    font-size: 3rem;
+    text-align: center;
+}
+/* liste des produits */
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: solid 2px var(--couleurLogInSurvol);
+    border-bottom: solid 2px var(--couleurLogInSurvol);
+}
+
+.produit {
+    margin-top: 20px;
+    border-bottom: solid 1px var(--couleurLogInSurvol);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.imgProduit img{
+    width: 30vw;
+    height: 25vw;
+    object-fit: contain;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.nomPrix {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.nom, .prix {
+    color: var(--couleurTextePrincipal);
+    font-size: 1.5rem;
+}
+
+.nom {
+    font-weight: bold;
+}
+
+.digits { /*[49].99$*/
+    font-size: 2rem;
+}
+
+.exposant { /*49.[99$]*/
+    vertical-align: super;
+    font-size: 1rem;
+}
+
+.qte {
+    display: flex;
+    justify-content: center;
+    column-gap: 5vw;
+    align-items: center;
+}
+
+.boiteNb {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 50px;
+    user-select: none;
+}
+.boiteNb p { /* - et + */
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--couleurTexteSecondaire);
+    width: 10vw;
+    text-align: center;
+    padding-top: 5px;
+    cursor: pointer;
+} 
+
+.boiteNb p:nth-child(2) { /* chiffre entre le - et + */
+    border-left: solid 1px var(--couleurPanierSurvol);
+    border-right: solid 1px var(--couleurPanierSurvol);
+    font-size: 1.5rem;
+    font-weight: unset;
+    padding-top: 10px;
+    width: 18vw;
+    cursor: default;
+}
+
+.boiteNb {
+    border: solid 1px var(--couleurPanierSurvol);
+}
+
+.total {
+    width: 120px; /*largeur fixe pour eviter que les éléments bougent avec le prix*/
+    font-size: 1.5rem;
+    color: var(--couleurTextePrincipal);
+}
+
+.retirer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    color: var(--couleurTextePrincipal);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.retirer span {
+    cursor: pointer;
+}
+ /* 
+    Requêtes Médias
+ */
+ @media screen and (min-width: 992px) { 
+
+ }

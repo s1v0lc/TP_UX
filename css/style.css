@@ -1,0 +1,270 @@
+/* 
+    Feuille de style pour TP final 
+
+    * Auteurs: Clovis Gauthier & Ryan Ao
+    * Remise: 15 décembre sur LÉA
+    * Présentation: 12 décembre 2023 (~11h20)
+*/
+
+/* Réinitialisation supplémentaire */
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+}
+/* Variables personnalisées */
+:root {
+    --couleurFond: #ffffff;
+    --couleurTextePrincipal: #8428AD;
+    --couleurTexteSecondaire: #AE86B7;
+    --couleurBordure: #707070;
+    --couleurBouton: #31488A;
+    --couleurPanierSurvol: #000000;
+    --couleurLogInSurvol: #AE86B7;
+    --couleurRabais: red;
+}
+/* Paramètres police material symbols */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+/* Importation polices */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url(../polices/HelveticaNeue-Light.otf);
+}
+
+/* Mise en page générale */
+body {
+    background-color: var(--couleurFond);
+    font-family: Arial, Helvetica, sans-serif;
+    /* min-width: 500px; */
+}
+
+/*
+    Entête + Navigation 
+*/
+header {
+    background-color: var(--couleurTextePrincipal);
+    /* width: 100vw; */
+    padding: 20px 5vw;
+    position: relative; /*pour positionner le logIn en absolute*/
+    user-select: none;
+}
+/* Entête */
+.entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuBurger #ouvrir, .menuBurger #fermer { /*icônes*/
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+.menuBurger #fermer, .menuBurger #btn { /* X et case à cocher*/
+    display: none;
+}
+
+.logo img { /*image du logo*/
+    width: 150px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.barreRecherche {
+    width: 40vw;
+    height: 50px;
+    background-color: var(--couleurFond);
+    border-radius: 50px;
+    display: none; /* Retiré pour mobile*/
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1.5vw;
+    margin: 0 1vw;
+    font-size: 2rem;
+}
+
+.loupe { /*icône*/
+    cursor: pointer;
+    font-size: 40px;
+    color: var(--couleurTextePrincipal);
+}
+
+.rabais, .panier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--couleurFond);
+    cursor: pointer;
+}
+
+.rabais span:first-of-type, .panier span:first-of-type, .logIn span:first-of-type { /*icônes*/
+    font-size: 3rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.rabais span:last-of-type, .panier span:last-of-type, .logIn span:last-of-type { /*texte*/
+    text-align: center;
+    display: none; /* Retiré pour mobile */
+}
+
+.logIn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 71%;
+    right: 5vw;
+    color: var(--couleurFond);
+    cursor: pointer;
+}
+
+/* Survol des boutons */
+.rabais:hover span:last-of-type, .panier:hover span:last-of-type, .logIn:hover span:last-of-type { /*texte*/
+    text-decoration: underline;
+}
+.rabais:hover span:first-of-type { /*icône rabais*/
+    color: var(--couleurRabais);
+}
+.panier:hover span:first-of-type { /*icône panier*/
+    color: var(--couleurPanierSurvol);
+}
+
+.logIn:hover span:first-of-type { /*icône logIn*/
+    color: var(--couleurLogInSurvol);
+}
+
+/* Navigation */
+nav { /*barre de navigation*/
+    animation: none;
+    position: absolute;
+    background-color: var(--couleurFond);
+    display: none; /* Retiré pour mobile*/
+    align-items: stretch;
+    width: 90vw;
+    height: 70vh;
+    border-radius: 50px;
+    margin-top: 20px;
+    overflow: hidden;
+    border: 1px solid var(--couleurFond);
+}
+
+.ouvrirMenu { /*classe ajoutée par JS*/
+    animation: animerMenu 0.5s forwards ease-out;
+    display: flex;
+}
+
+.fermerMenu { /*classe ajoutée par JS*/
+    animation: animerMenu 0.5s  infinite reverse ease-in;
+    display: flex;
+}
+
+ul { /*liste qui regroupe les onglets*/
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+nav li {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3%;
+    transition: background-color 0.3s linear;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+li::before { /*barre animée lors du hover*/
+    content: "";
+    position: absolute;
+    top: 95%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--couleurFond);
+    transform: translate(-101%);
+    transition: all 0.3s ease-in-out;
+}
+
+nav a {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+/* Survol d'un onglet du menu */
+li:hover {
+    background-color: var(--couleurTextePrincipal);
+}
+
+li:hover::before {
+    transform: translate(0);
+}
+
+li:hover a {
+    color: var(--couleurFond);
+}
+/* 
+    Footer
+ */
+
+ /* 
+    Requêtes Médias
+ */
+ @media screen and (min-width: 992px) {   
+    /* Changement d'affichage du Menu sur PC */
+    .menuBurger {
+        display: none;
+    }
+
+    .barreRecherche {
+        display: flex;
+    }
+
+    .logIn {
+        position: absolute;
+    }
+
+    .logIn span:first-of-type{ /*icône logIn*/
+        font-size: 2rem;
+    }
+
+    .rabais span:last-of-type, .panier span:last-of-type, .logIn span:last-of-type { /*texte*/
+        display: flex;
+    }
+
+    nav {
+        position: relative;
+        display: flex;
+        width: 70vw;
+        height: 45px;
+    }
+
+    ul {
+        flex-direction: row;
+    }
+
+    nav a  {
+        font-size: 1rem;
+    }
+}
