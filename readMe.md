@@ -1,13 +1,15 @@
 Complété:
     Mise en page du menu pc,
-    Menu mobile
+    Menu mobile,
+    Interaction panier
 
 En cours:
     Menu pc responsive,
     Panier mobile,
-    Accueil
+    Accueil,
+    Footer
     
 À faire:
-    Panier pc,
-    Gérer feuilles de style,
-    Régler bug d'animation de fermeture
+    Description pour panier pc,
+    Régler bug d'animation de fermeture,
+    Faire fonctionner carroussel

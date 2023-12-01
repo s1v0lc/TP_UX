@@ -14,7 +14,7 @@
     padding: 0;
 }
 
-img {
+img{
     display: block;
 }
 /* Variables personnalisées */
@@ -228,6 +228,32 @@ li:hover a {
     Footer
  */
 
+footer{
+    padding-top: 5vh;
+}
+
+.footer{
+    background-color: var(--couleurTextePrincipal);
+    color: var(--couleurFond);
+    padding: 3.5vh 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+h3{
+    padding-bottom: 10px;
+}
+
+#about{
+    width: 60%;
+}
+
+#about~div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
  /* 
     Requêtes Médias
  */
@@ -266,5 +292,35 @@ li:hover a {
 
     nav a  {
         font-size: 1rem;
+    }
+
+    /* Footer Écran */
+
+    footer{
+        padding-top: 5vh;
+    }
+    
+    .footer{
+        background-color: var(--couleurTextePrincipal);
+        color: var(--couleurFond);
+        padding: 3.5vh 5vh;
+        display: flex;
+        justify-content: space-between;
+        text-align: justify;
+    }
+
+    h3{
+        padding-bottom: 10px;
+    }
+
+    #apdn{
+        width: 60%;
+    }
+
+    #apdn~div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
     }
 }
