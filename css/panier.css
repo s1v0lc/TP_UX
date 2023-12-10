@@ -34,6 +34,8 @@ article {
 .imgProduit img{
     width: 30vw;
     height: 25vw;
+    min-width: 120px;
+    min-height: 100px;
     object-fit: contain;
 }
 
@@ -50,11 +52,18 @@ article {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    row-gap: 5px;
+}
+
+.description {
+    display: none; /* retiré pour mobile*/
+    font-size: 1.2rem;
+    color: var(--couleurTexteSecondaire);
 }
 
 .nom, .prix {
     color: var(--couleurTextePrincipal);
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1rem + 3vw, 4rem);
 }
 
 .nom {
@@ -109,8 +118,9 @@ article {
 }
 
 .total {
-    width: 120px; /*largeur fixe pour eviter que les éléments bougent avec le prix*/
-    font-size: 1.5rem;
+    width: 125px; /*largeur fixe pour éviter que les éléments bougent avec le prix*/
+    font-size: 1.75rem;
+    font-weight: bold;
     color: var(--couleurTextePrincipal);
 }
 
@@ -127,9 +137,105 @@ article {
 .retirer span {
     cursor: pointer;
 }
- /* 
-    Requêtes Médias
- */
- @media screen and (min-width: 992px) { 
+/* 
+    Résumé de la commande
+*/
+.facture h2 {
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 50px;
+    width: 75vw;
+    padding-top: 13px;
+    background-color: var(--couleurTextePrincipal);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
+.boite {
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 10px;
+    padding-bottom: 30px;
+    text-align: center;
+    width: 75vw;
+    height: fit-content + 120px;
+    border: 1px var(--couleurTexteSecondaire) solid;
+}
+
+.facture h3 {
+    font-size: 1.5rem;
+    color: var(--couleurTextePrincipal);
+    margin-bottom: 10px;
+}
+.sousTotalFacture, .taxe, .totalFacture {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    width: 80%;
+    color: var(--couleurTexteSecondaire);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.sousTotalFacture p, .taxe p, .totalFacture p {
+    color: var(--couleurTextePrincipal);
+    font-size: 1.6rem;
+}
+
+.facture h3:nth-of-type(2) {
+    /* width: 80%; */
+    border-top: 1px solid var(--couleurTexteSecondaire);
+    padding-top: 15px;
+    /* height: 10px; */
+}
+
+.facture form {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.facture form div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 10vw;
+}
+
+.facture label {
+    font-size: 1.2rem;
+    color: var(--couleurTexteSecondaire);
+    font-weight: bold;
+}
+
+.facture a {
+    color: white;
+    background-color: var(--couleurTextePrincipal);
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    border: 1px solid var(--couleurTexteSecondaire);
+}
+
+.icones  {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    column-gap: 2vw;
+}
+
+.icones img {
+    height: 40px;
+    width: auto;
+}
+/* 
+    Requêtes Médias
+*/
+ @media screen and (min-width: 576px) { 
+    .description {
+        display: unset;
+    }
  }

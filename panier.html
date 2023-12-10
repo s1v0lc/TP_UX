@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP_UX</title>
     <!-- Importation Material Symbols -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <!-- Importation feuille de style-->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
@@ -24,24 +24,24 @@
                 </label>
                 <input id="btn" type="checkbox">
             </div>
-            <div class="logo">
+            <a class="logo" href="index.html">
                 <img src="images/logo.png" alt="">
-            </div>
+            </a>
             <div class="barreRecherche">
                 <span class="loupe material-symbols-outlined">search</span>
             </div>
-            <div class="rabais">
+            <a class="rabais" href="#">
                 <span class="material-symbols-outlined">sell</span>
                 <span>ESCOMPTES & NOUVEAUTÉS</span>
-            </div>
-            <div class="panier">
+            </a>
+            <a class="panier" href="panier.html">
                 <span class="material-symbols-outlined">shopping_cart</span>
                 <span>PANIER</span>
-            </div>
-            <div class="logIn">
+            </a>
+            <a class="logIn" href="#">
                 <span class="material-symbols-outlined">account_circle</span>
                 <span>INSCRIPTION / CONNEXION</span>
-            </div>
+            </a>
         </div>
         <!-- Barre de navigation -->
         <nav>
@@ -68,7 +68,14 @@
                     </div>
                     <div class="nomPrix">
                         <p class="nom">Peluche Gudetama</p>
-                        <p class="prix"><span class=digits>49</span><span class="exposant">99$</span>/chacun</p>
+                        <p class="prix">
+                            <span class=digits>49</span><span class="exposant">99$</span>/chacun
+                        </p>
+                        <div class="description">
+                            GUND Sanrio Gudetama - Animal en peluche l'œuf paresseux, 
+                            récipient à emporter Gudetama - Jouet en peluche pour enfants 
+                            de 8 ans et plus, 24,1 cm
+                        </div>
                     </div>
                 </div>
                 <div class="qte">
@@ -89,7 +96,14 @@
                     </div>
                     <div class="nomPrix">
                         <p class="nom">Peluche Gudetama</p>
-                        <p class="prix"><span class=digits>49</span><span class="exposant">99$</span>/chacun</p>
+                        <p class="prix">
+                            <span class=digits>49</span><span class="exposant">99$</span>/chacun
+                        </p>
+                        <div class="description">
+                            GUND Sanrio Gudetama - Animal en peluche l'œuf paresseux, 
+                            récipient à emporter Gudetama - Jouet en peluche pour enfants 
+                            de 8 ans et plus, 24,1 cm
+                        </div>
                     </div>
                 </div>
                 <div class="qte">
@@ -110,7 +124,14 @@
                     </div>
                     <div class="nomPrix">
                         <p class="nom">Peluche Gudetama</p>
-                        <p class="prix"><span class=digits>49</span><span class="exposant">99$</span>/chacun</p>
+                        <p class="prix">
+                            <span class=digits>49</span><span class="exposant">99$</span>/chacun
+                        </p>
+                        <div class="description">
+                            GUND Sanrio Gudetama - Animal en peluche l'œuf paresseux, 
+                            récipient à emporter Gudetama - Jouet en peluche pour enfants 
+                            de 8 ans et plus, 24,1 cm
+                        </div>
                     </div>
                 </div>
                 <div class="qte">
@@ -124,58 +145,63 @@
                 <!-- Placé dans un span pour avoir un pointeur plus précis -->
                 <p class="retirer"><span>Retirer du panier</span></p>
             </section>
-            <section class="produit">
-                <div class="info">
-                    <div class="imgProduit">
-                        <img src="images/gudetama.jpeg" alt="image du produit">
-                    </div>
-                    <div class="nomPrix">
-                        <p class="nom">Peluche Gudetama</p>
-                        <p class="prix"><span class=digits>49</span><span class="exposant">99$</span>/chacun</p>
-                    </div>
-                </div>
-                <div class="qte">
-                    <div class="boiteNb">
-                        <p>-</p>
-                        <p>3</p>
-                        <p>+</p>
-                    </div>
-                    <p class="total">149,97 $</p>
-                </div>
-                <!-- Placé dans un span pour avoir un pointeur plus précis -->
-                <p class="retirer"><span>Retirer du panier</span></p>
-            </section>
-            <section class="produit">
-                <div class="info">
-                    <div class="imgProduit">
-                        <img src="images/gudetama.jpeg" alt="image du produit">
-                    </div>
-                    <div class="nomPrix">
-                        <p class="nom">Peluche Gudetama</p>
-                        <p class="prix"><span class=digits>49</span><span class="exposant">99$</span>/chacun</p>
-                    </div>
-                </div>
-                <div class="qte">
-                    <div class="boiteNb">
-                        <p>-</p>
-                        <p>3</p>
-                        <p>+</p>
-                    </div>
-                    <p class="total">149,97 $</p>
-                </div>
-                <!-- Placé dans un span pour avoir un pointeur plus précis -->
-                <p class="retirer"><span>Retirer du panier</span></p>
-            </section>
-            
         </article>
         <!-- Résumé de la commande -->
-        <div class="facture"></div>
-        <!-- Méthodes de paiement -->
-        <div class="icones"></div>
+        <section class="facture">
+            <h2>Commande</h2>
+            <div class="boite">
+                <h3>Résumé des achats</h3>
+                <div class="sousTotalFacture">
+                    Sous-total <p>199<span class="exposant">96$</span></p>
+                </div>
+                <div class="taxe">
+                    Taxe <p>29<span class="exposant">96$</span></p>
+                </div>
+                <div class="totalFacture">
+                    Total <p>299<span class="exposant">95$</span></p>
+                </div>
+                <h3>Mode de ramassage</h3>
+                <form>
+                    <div>
+                        <input type="radio" name="test" id="1">
+                        <label for="1">Livraison à domicile</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="test" id="2">
+                        <label for="2">Ramassage en magasin</label>
+                    </div>
+                </form>
+                <a href="#">Effectuer le paiement</a>
+            </div>
+            <!-- Méthodes de paiement -->
+            <div class="icones">
+                <img src="images/visa-svgrepo-com.png" alt="">
+                <img src="images/amex-svgrepo-com.png" alt="">
+                <img src="images/mastercard-old-svgrepo-com.png" alt="">
+                <img src="images/paypal-svgrepo-com.png" alt="">
+                <img src="images/discover-svgrepo-com.png" alt="">
+            </div>
+        </section>
     </main>
     <!-- Pied de page -->
-    <footer></footer>
+    <footer>
+        <div class="footer">
+            <div id="about">
+                <h3>À propos de nous</h3>
+                <p>Divertioz, jeux et jouets pour tous les âges. Jeux pour enfants, jeux de table, jeux de société, casse-tête et beaucoup plus.</p>
+             </div>
+            <div>
+                <p>Nous Contacter</p>
+                <p>Nos Politiques</p>
+                <!-- <p>Politiques de confidentialité</p>
+                <p>Politiques de retour</p>
+                <p>Politiques d'expédition</p> -->
+                <p>Termes d'utilisation</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Importation du Script -->
+    <script src="js/main.js">
+    </script>
 </body>
-<!-- Importation du Script -->
-<script src="js/main.js"></script>
 </html>

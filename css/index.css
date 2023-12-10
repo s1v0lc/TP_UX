@@ -29,29 +29,28 @@ div.carousel img{
 }
 
 div div img{
-    width: 10vw;
-    object-fit: contain;
-}
-
-.produit{
-    width: 35vw;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 2.5vh;
+    width: 25vw;
 }
 
 .article{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding-top: 5vh;
+}
+
+.produit{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5vh;
 }
 
 .titreSection{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 15px;
+    padding: 15px 0;
     border-bottom: solid 1.5px var(--couleurLogInSurvol);
     font-weight: bold;
+    font-family: var(--policeBtn);
 }
 
 .titreSection > span > a{
@@ -60,10 +59,48 @@ div div img{
 
 .item{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    padding: 1.5vh 0;
+    border-bottom: 2px solid var(--couleurLogInSurvol);
+}
+
+.item>div{
+    width: 100%;
+}
+
+.item>div>p{
     text-align: center;
+    margin-bottom: 1.5vh;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    height: 50px;
+    overflow: hidden;
+}
+
+.item div>div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.item div>p~p{ /* Bouton */
+    text-align: center;
+    border-radius: 15px;
+    padding: 15px 20px;
+    background-color: var(--couleurBouton);
+    color: var(--couleurFond);
+    cursor: pointer;
+    user-select: none;
+}
+
+.exposant { /*49.[99$]*/
+    vertical-align: super;
+    font-size: 1rem;
+}
+
+.prix {
+    color: var(--couleurTextePrincipal);
+    font-size: 1.5rem;
 }
 
  /* 
@@ -98,12 +135,14 @@ div div img{
     .produit{
         width: 35vw;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         padding-top: 2.5vh;
     }
 
     .article{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         padding-top: 5vh;
     }
@@ -111,7 +150,6 @@ div div img{
     .titreSection{
         display: flex;
         justify-content: space-between;
-        padding-bottom: 15px;
         border-bottom: solid 1.5px var(--couleurLogInSurvol);
         font-weight: bold;
     }
@@ -121,10 +159,17 @@ div div img{
     }
     
     .item{
+        width: 10vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         text-align: center;
+        border-bottom: none;
+    }
+
+    .item div>div{
+        width: 100%;
+        display: block;
     }
 }
