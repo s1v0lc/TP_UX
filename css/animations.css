@@ -11,3 +11,23 @@
         transform: translate(0);
     }
 }
+
+/* Animation de hover sur le bouton ajouter au panier / voir l'article */
+@keyframes animerBouton {
+    from  {
+        clip-path: circle(100%);
+    }
+    to {
+        clip-path: circle(0%);
+    }
+}
+
+/* Animation de retrait d'un produit dans le panier */
+@keyframes retirerProduit {
+    from {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    to {
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    }
+}

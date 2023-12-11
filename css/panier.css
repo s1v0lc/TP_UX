@@ -31,6 +31,21 @@ article {
     row-gap: 10px;
 }
 
+.retraitProduit { /*class ajoutée pour animer*/
+    animation: retirerProduit 0.4s forwards linear;
+} 
+
+.erreur { /*affiché s'il n'y a plus de produits dans le panier*/
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--couleurTextePrincipal);
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
 .imgProduit img{
     width: 30vw;
     height: 25vw;

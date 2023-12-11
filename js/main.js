@@ -1,4 +1,4 @@
-// Test pour changer icônes du menu avec le checkbox 
+//// Changer icônes du menu avec le checkbox ////
 
 // ****BUG******
 // animation de fermeture du menu
@@ -36,13 +36,14 @@ nav.addEventListener("animationiteration", function(event) {
     }
 });
 
-// Gestion des articles dans le panier
+//// Gestion des articles dans le panier ////
 let btnsPlus = document.querySelectorAll(".boiteNb p:nth-child(3)"); // bouton pour ajouter un item
 let btnsMoins = document.querySelectorAll(".boiteNb p:nth-child(1)"); // bouton pour enlever un item
 let nbItems = document.querySelectorAll(".boiteNb p:nth-child(2)"); // nombre d'items
 let totaux = document.querySelectorAll(".total"); 
 let prix = 49.99; //temporaire
 
+// Ajout des gestionnaires d'événements et d'une propriété index
 for (let i = 0; i < btnsPlus.length ; i++) {
     btnsPlus[i].addEventListener("click", augmenteNb);
     btnsMoins[i].addEventListener("click", diminueNb);
@@ -50,28 +51,50 @@ for (let i = 0; i < btnsPlus.length ; i++) {
     btnsMoins[i].index = i;
     totaux[i].index = i;
 }
+// Quand l'utilisateur clique sur "+"
 function augmenteNb(event) {
     let i = event.target.index;
     nbItems[i].innerHTML = Number(nbItems[i].innerHTML) + 1;
     totaux[i].innerHTML = (Number(nbItems[i].innerHTML) * prix).toFixed(2)+ " $";
 }
+// Quand l'utilisateur clique sur "-"
 function diminueNb(event) {
     let i = event.target.index;
-    if (Number(nbItems[i].innerHTML) > 0) {
+    if (Number(nbItems[i].innerHTML) > 1) {
         nbItems[i].innerHTML = Number(nbItems[i].innerHTML) - 1;
         totaux[i].innerHTML = (Number(nbItems[i].innerHTML) * prix).toFixed(2)+ " $";
     }
 }
 
-// Retirer les articles du panier
+//// Retirer les articles du panier ////
+
+// Chaque produit est inséré dans un tableau pour les compter
+let produits = document.querySelectorAll(".produit");
+let produitsArray = [];
+for (const prod of produits) {
+    produitsArray.push(prod);
+}
+
+// Si l'utilisateur clique sur un bouton retirer
 let retirer = document.querySelectorAll(".retirer");
 for (const bouton of retirer) {
     bouton.addEventListener("click", function (event) {
-        event.target.parentElement.parentElement.style.display = "none";
+        // Retrait de l'affichage
+        let cible = event.target.closest(".produit")
+        cible.classList.add("retraitProduit");
+        cible.addEventListener("animationend", function() {
+            cible.style.display = "none";
+        })
+        produitsArray.pop();
+        // s'il n'y a plus de produits
+        if (produitsArray.length == 0) {
+            // création du message d'erreur
+            let elm = document.createElement("p");
+            elm.classList.add("erreur");
+            elm.innerHTML = "Il ne reste plus d'articles dans votre panier !";
+            // ajout du message dans la page
+            let articles = document.querySelector("article");
+            articles.append(elm);
+        }
     })
-}
-// -> s'il n'y a plus de produits afficher message d'erreur
-let produits = document.querySelectorAll(".produit");
-if (produits.length = 0) {
-    // ->faire apparaître message
 }
