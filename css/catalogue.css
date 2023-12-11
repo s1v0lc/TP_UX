@@ -1,0 +1,124 @@
+/* 
+    Feuille de style pour TP final 
+
+    * Auteurs: Clovis Gauthier & Ryan Ao
+    * Remise: 15 décembre sur LÉA
+    * Présentation: 12 décembre 2023 (~11h20)
+*/
+/* 
+    Catalogue
+*/
+.sousNav { /*mobile seulement*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--couleurFond2);
+    height: 80px;
+}
+
+.sousTitre p:first-child {
+    color: var(--couleurTextePrincipal);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.sousTitre p:last-child {
+    color: var(--couleurTextePrincipal);
+}
+
+.filtre {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 2vw;
+    align-items: center;
+}
+
+.filtre p {
+    color: var(--couleurTextePrincipal);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.filtre span {
+    font-size: 2.75rem;
+    color: var(--couleurTextePrincipal);
+}
+
+.filtre span:last-child {
+    margin-left: 5vw;
+}
+/*
+    Produits
+*/
+.produit {
+    padding: 10px 0px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    border-bottom: 2px solid var(--couleurTexteSecondaire);
+}
+
+.produit img {
+    width: 100px;
+    height: 100px;
+    /* background-color: blue; */
+    box-shadow: 0px 3px 5px 2px #bbbbbb;
+    object-fit: scale-down;
+}
+
+.produit .titre {
+    font-size: 2rem;
+    color: var(--couleurTextePrincipal);
+    font-weight: bold;
+}
+
+.produit .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produit .prixBouton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.produit .prix {
+    font-size: 2rem;
+    color: var(--couleurTextePrincipal);
+}
+
+.produit .exposant {
+    vertical-align: super;
+    font-size: 1.2rem;
+}
+
+.produit .bouton {
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #31488A;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.5s;
+    border: 4px solid #31488A;
+}
+
+.produit .bouton:hover {
+    color: #31488A;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: white;
+    border: 4px solid #31488A;
+    cursor: pointer;
+}
+/* 
+    requêtes médias
+*/
+@media screen and (min-width: 992px) {
+    .sousNav {
+        display: none;
+    }
+}

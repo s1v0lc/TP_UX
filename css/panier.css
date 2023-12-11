@@ -55,6 +55,11 @@ article {
     row-gap: 5px;
 }
 
+.vendeur {
+    display: none;
+    color: var(--couleurTexteSecondaire);
+}
+
 .description {
     display: none; /* retiré pour mobile*/
     font-size: 1.2rem;
@@ -144,7 +149,7 @@ article {
     margin: 0 auto;
     margin-top: 20px;
     height: 50px;
-    width: 75vw;
+    width: 75vw; /*retiré pour pc*/
     padding-top: 13px;
     background-color: var(--couleurTextePrincipal);
     color: white;
@@ -153,13 +158,26 @@ article {
     font-weight: bold;
 }
 
+.barreMauve { /*apparaît sur pc*/
+    display: none;
+    /* flex-direction: ; */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: var(--couleurTextePrincipal);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 .boite {
     margin: 0 auto;
     margin-top: 5px;
     padding: 10px;
     padding-bottom: 30px;
     text-align: center;
-    width: 75vw;
+    width: 75vw; /*retiré pour pc*/
     height: fit-content + 120px;
     border: 1px var(--couleurTexteSecondaire) solid;
 }
@@ -169,6 +187,7 @@ article {
     color: var(--couleurTextePrincipal);
     margin-bottom: 10px;
 }
+
 .sousTotalFacture, .taxe, .totalFacture {
     display: flex;
     justify-content: space-between;
@@ -238,4 +257,126 @@ article {
     .description {
         display: unset;
     }
+ }
+
+ @media screen and (min-width: 992px) {
+    main {
+        display: flex;
+    }
+
+    main h1 {
+        display: none;
+    }
+
+    article.articles {
+        width: 75vw;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .barreMauve {
+        display: flex;
+        width: 95%;
+        justify-content: space-around;
+    }
+
+    .barreMauve p:nth-child(2) { /*travailler alignement*/
+        /* color: red; */
+        /* padding-left: ; */
+        /* margin-left: 200px; */
+    }
+
+    .produit {
+        flex-direction: unset;
+        position: relative;
+        justify-content: space-evenly;
+        /* border: 1px var(--couleurTexteSecondaire) solid; */
+    }
+
+    .nomPrix {
+        padding: unset;
+    }
+
+    .prix {
+        color: var(--couleurTexteSecondaire);
+        font-size: 1rem;
+    }
+
+    .digits {
+        font-size: 1.2rem;
+    }
+
+    .exposant {
+        /* vertical-align: unset; */
+    }
+
+    .vendeur {
+        display: unset;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .imgProduit img {
+        width: 15vw;
+        height: 12.5vw;
+    }
+
+    .nom {
+        font-size: 1rem;
+    }
+
+    .qte {
+        column-gap: 30px;
+
+    }
+
+    .boiteNb p:nth-child(2), .boiteNb p {
+        width: 50px;
+    }
+
+    .qte .total {
+        width: 120px;
+    }
+
+    .retirer {
+        position: absolute;
+        right: 25%;
+        bottom: 0;
+        font-size: 1rem;
+    }
+
+    .facture {
+        width: 20vw;
+    }
+
+    .facture h2 {
+        width: unset;
+    }
+
+    .boite {
+        width: unset;
+    }
+
+    .facture form div {
+        column-gap: unset;
+    }
+
+    .facture form div label {
+        font-size: 0.75rem;
+    }
+    .facture h3 {
+        font-size: 1rem;
+    }
+    .facture a {
+        padding: 5px;
+        font-size: 1rem;
+    }
+
+    .icones img {
+        height: 25px;
+        column-gap: 1vw;
+    }
+
  }
