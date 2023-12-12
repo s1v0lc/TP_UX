@@ -58,7 +58,9 @@ header {
     background-color: var(--couleurTextePrincipal);
     /* width: 100vw; */
     padding: 20px 5vw;
-    position: relative; /*pour positionner le logIn en absolute*/
+    position: sticky;
+    top: 0;
+    z-index: 100;
     user-select: none;
 }
 /* Entête */
@@ -160,6 +162,7 @@ nav { /*barre de navigation*/
     margin-top: 20px;
     overflow: hidden;
     border: 1px solid var(--couleurFond);
+    z-index: 100;
 }
 
 .ouvrirMenu { /*classe ajoutée par JS*/

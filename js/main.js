@@ -91,10 +91,34 @@ for (const bouton of retirer) {
             // création du message d'erreur
             let elm = document.createElement("p");
             elm.classList.add("erreur");
-            elm.innerHTML = "Il ne reste plus d'articles dans votre panier !";
+            elm.innerHTML = "Il n'y a plus d'articles dans votre panier !";
             // ajout du message dans la page
             let articles = document.querySelector("article");
             articles.append(elm);
         }
     })
 }
+
+// Gestion des icônes pour changer l'affichage dans le catalogue
+let btnVue = document.getElementById('btnVue'); // checkbox
+let iconePrecise = document.getElementById('precis'); // icône 1
+let iconeVague = document.getElementById('vague'); // icône 2
+
+// Lorsque l'utlisateur appuie sur le bouton du menu
+btnVue.addEventListener("click", function() {
+    if(btnVue.checked) { //si le bouton est coché
+        // Affichage / Retrait du bouton
+        iconePrecise.style.display = "none";
+        iconeVague.style.display = "unset";
+    } else { //si le bouton est décoché
+        // Affichage / Retrait du bouton
+        iconePrecise.style.display = "unset";
+        iconeVague.style.display = "none";
+    }
+});
+
+// // Gestion des icônes pour trier dans le catalogue
+// let btnTri = document.getElementById('btnVue'); // checkbox
+// let icone1 = document.getElementById('precis'); // icône 1
+// let icone2 = document.getElementById('vague'); // icône 2
+// // let menu = document.querySelector('nav'); // menu tri

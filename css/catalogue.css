@@ -26,26 +26,38 @@
     color: var(--couleurTextePrincipal);
 }
 
-.filtre {
+.affichage {
     display: flex;
     justify-content: space-evenly;
     column-gap: 2vw;
     align-items: center;
 }
 
-.filtre p {
+.affichage p {
     color: var(--couleurTextePrincipal);
     font-size: 1.1rem;
     font-weight: bold;
 }
 
-.filtre span {
+.affichage span {
     font-size: 2.75rem;
     color: var(--couleurTextePrincipal);
 }
 
-.filtre span:last-child {
-    margin-left: 5vw;
+.filtre {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    /* background-color: white; */
+}
+
+#vague, #precis {
+    cursor: pointer;
+    user-select: none;
+}
+#vague, #btnVue { /*icône & checkbox*/
+    display: none;
 }
 /*
     Produits

@@ -1,15 +1,16 @@
 Complété:
-    Mise en page du menu pc,
-    Menu mobile,
-    Interaction panier
+    Menu de navigation,
+    Footer,
+    Panier
+
 
 En cours:
-    Menu pc responsive,
-    Panier mobile,
     Accueil,
-    Footer
+    Catalogue
     
 À faire:
-    Description pour panier pc,
     Régler bug d'animation de fermeture,
-    Faire fonctionner carroussel
+    Faire fonctionner carroussel,
+    sous menu lors d'un hover sur pc,
+    animation d'interactions,
+    barre de recherche fonctionnelle,
