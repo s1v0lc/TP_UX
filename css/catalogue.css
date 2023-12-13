@@ -3,10 +3,13 @@
 
     * Auteurs: Clovis Gauthier & Ryan Ao
     * Remise: 15 décembre sur LÉA
-    * Présentation: 12 décembre 2023 (~11h20)
+    * Présentation: ? décembre 2023 (~11h20)
 */
 /* 
     Catalogue
+*/
+/* 
+    sous-navigation
 */
 .sousNav { /*mobile seulement*/
     display: flex;
@@ -49,19 +52,110 @@
     align-items: center;
     cursor: pointer;
     user-select: none;
-    /* background-color: white; */
 }
 
 #vague, #precis {
     cursor: pointer;
     user-select: none;
 }
+
 #vague, #btnVue { /*icône & checkbox*/
     display: none;
+}
+/* 
+    Filtres (pc)
+ */
+.filtres {
+    display: none;
+    width: 15vw;
+    /* background-color: var(--couleurTextePrincipal); */
+}
+
+.filtres h2 {
+    background-color: var(--couleurTextePrincipal);
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    padding:  10px 0;
+}
+
+.filtres div.c {
+    border: 1px solid var(--couleurTexteSecondaire);
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.filtres h3 {
+    color: var(--couleurTextePrincipal);
+}
+
+.filtres p {
+    padding-left: 5px;
+    color: var(--couleurTexteSecondaire);
+    font-weight: bold;
+}
+
+.diagrame { /*barre horizontale*/
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    border: 2px solid var(--couleurTextePrincipal);
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.diagrame::before { /*point à gauche de la barre horizontale*/
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 2px solid var(--couleurTextePrincipal);
+    border-radius: 50%;
+    top: -9px;
+    left: -10px;
+}
+
+.diagrame::after { /*point à droite de la barre horizontale*/
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 2px solid var(--couleurTextePrincipal);
+    border-radius: 50%;
+    top: -9px;
+    right: -10px;
+}
+
+.diagrame div { /*barres verticales*/
+    position: absolute;
+    width: 2px;
+    height: 9px;
+    background-color: var(--couleurTextePrincipal);
+    top: -4px;
+}
+
+.diagrame div:first-child {
+    left: 25%;
+}
+
+.diagrame div:last-child {
+    left: 75%;
 }
 /*
     Produits
 */
+article {
+    /* width: 70vw; */
+}
+
+.barreMauve {
+    display: none;
+}
+
 .produit {
     padding: 10px 0px;
     display: flex;
@@ -146,7 +240,25 @@
     requêtes médias
 */
 @media screen and (min-width: 992px) {
+    main {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
     .sousNav {
         display: none;
+    }
+
+    .filtres {
+        display: unset;
+    }
+
+    article {
+        width: 70vw;
+    }
+
+    .barreMauve {
+        display: unset;
     }
 }

@@ -31,3 +31,13 @@
         clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
     }
 }
+
+/* Animation des slides du carroussel */
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    } 
+    to {
+        opacity: 1;
+    }
+}

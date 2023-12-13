@@ -3,7 +3,7 @@
 
     * Auteurs: Clovis Gauthier & Ryan Ao
     * Remise: 15 décembre sur LÉA
-    * Présentation: 12 décembre 2023 (~11h20)
+    * Présentation: ? décembre 2023 (~11h20)
 */
 
 /* 
@@ -16,21 +16,34 @@
     padding-top: 5vh;
 }
 
+/* Carousel */
+
 main div.carousel{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 div.carousel img{
-    border-radius: 0;
-    width: 15vw;
+    width: 50vw;
     height: 15vh;
     object-fit: contain;
 }
 
 div div img{
     width: 25vw;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
+
+#carousel{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Article */
 
 .article{
     display: flex;
@@ -61,11 +74,15 @@ div div img{
     display: flex;
     align-items: center;
     padding: 1.5vh 0;
-    border-bottom: 2px solid var(--couleurLogInSurvol);
+    border-bottom: 1.5px solid var(--couleurLogInSurvol);
 }
 
 .item>div{
     width: 100%;
+}
+
+.item>div>p:first-child{
+    font-size: x-large;
 }
 
 .item>div>p{
@@ -83,7 +100,7 @@ div div img{
     justify-content: space-around;
 }
 
-.item div>p~p{ /* Bouton */
+.item div>p[class="prix"]~p{ /* Bouton */
     text-align: center;
     border-radius: 15px;
     padding: 15px 20px;
@@ -103,6 +120,46 @@ div div img{
     font-size: 1.5rem;
 }
 
+.description{
+    color: grey;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    width: auto;
+    height: 100%;
+    padding: 8px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev:hover, .next:hover {
+    background-color: grey;
+}
+
+#dot {
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
  /* 
     Requêtes Médias
  */
@@ -128,7 +185,7 @@ div div img{
     }
     
     div div img{
-        width: 10vw;
+        width: 9vw;
         object-fit: contain;
     }
 
@@ -165,11 +222,16 @@ div div img{
         justify-content: space-between;
         align-items: center;
         text-align: center;
-        border-bottom: none;
+        padding: 5px;
+        border: 1px solid var(--couleurLogInSurvol);
     }
 
     .item div>div{
         width: 100%;
         display: block;
+    }
+
+    .item>div>p:nth-child(2){
+        font-size: small;
     }
 }

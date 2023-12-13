@@ -105,20 +105,62 @@ let iconePrecise = document.getElementById('precis'); // icône 1
 let iconeVague = document.getElementById('vague'); // icône 2
 
 // Lorsque l'utlisateur appuie sur le bouton du menu
-btnVue.addEventListener("click", function() {
-    if(btnVue.checked) { //si le bouton est coché
-        // Affichage / Retrait du bouton
-        iconePrecise.style.display = "none";
-        iconeVague.style.display = "unset";
-    } else { //si le bouton est décoché
-        // Affichage / Retrait du bouton
-        iconePrecise.style.display = "unset";
-        iconeVague.style.display = "none";
-    }
-});
+if(btnVue){
+    btnVue.addEventListener("click", function() {
+        if(btnVue.checked) { //si le bouton est coché
+            // Affichage / Retrait du bouton
+            iconePrecise.style.display = "none";
+            iconeVague.style.display = "unset";
+        } else { //si le bouton est décoché
+            // Affichage / Retrait du bouton
+            iconePrecise.style.display = "unset";
+            iconeVague.style.display = "none";
+        }
+    });
+}
 
 // // Gestion des icônes pour trier dans le catalogue
 // let btnTri = document.getElementById('btnVue'); // checkbox
 // let icone1 = document.getElementById('precis'); // icône 1
 // let icone2 = document.getElementById('vague'); // icône 2
 // // let menu = document.querySelector('nav'); // menu tri
+
+// Carousel
+        
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Appelé par les flèches du carroussel (1 ou -1)
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Appelé par un click sur les points du carroussel
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("img"); // attrappe les images
+    let dots = document.getElementsByClassName("dot"); // attrappe les points
+
+    ////// Pour loop les flèches ////////
+    if (n > slides.length) { // si n est supérieur au nombres d'images
+        slideIndex = 1;
+    }    
+    if (n < 1) { // si n est inférieur à 1
+        slideIndex = slides.length;
+    }
+    ////// Pour display la bonne image /////
+
+    for (i = 0; i < slides.length; i++) { // toutes les images sont cachées
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) { // la classe active est retirée
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    // puis l'image avec le bon index est affichée
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}

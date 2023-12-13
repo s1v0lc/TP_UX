@@ -60,10 +60,21 @@
     <main>
         <!-- caroussel -->
         <div class="carousel">
-            <img src="images/jeu.jpeg" alt="Jeu">
-            <img src="images/jouets.jpeg" alt="Jouet">
-            <img src="images/lego.jpg" alt="Lego">
-            <img src="" alt="">
+            <a class="prev" onclick="plusSlides(-1)">❮</a> <!-- flèche gauche -->
+            <div id="carousel">
+                <img class="img" src="images/jeu.jpeg" alt="Jeu">
+                <img class="img" src="images/jouets.jpeg" alt="Jouet">
+                <img class="img" src="images/lego.jpg" alt="Lego">
+                <img class="img" src="images/pokemon.jpg" alt="Pokemon">
+            </div>
+            <a class="next" onclick="plusSlides(1)">❯</a> <!-- flèche droite -->
+        </div>
+        <!-- Points sous le carroussel -->
+        <div id="dot">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
         </div>
         <!-- articles recommandés -->
         <div class="article">
@@ -77,6 +88,7 @@
                         <img src="images/jeu.jpeg" alt="Jeu">
                         <div>
                             <p>Jeu Kanoodle</p>
+                            <p class="description">Jeu pour enfants entre 2-5 ans</p>
                             <div>
                                 <p class="prix"><span class=digits>49</span><span class="exposant">99$</span></p>
                                 <p>Voir l'article</p>
@@ -87,6 +99,7 @@
                         <img src="images/jouets.jpeg" alt="Jouet">
                         <div>
                             <p>Tour d'anneaux en plastique</p>
+                            <p class="description">Tour d'anneaux, boîte d'aliment, vehicule</p>
                             <div>
                                 <p class="prix"><span class=digits>49</span><span class="exposant">99$</span></p>
                                 <p>Voir l'article</p>
@@ -97,6 +110,7 @@
                         <img src="images/lego.jpg" alt="Lego">
                         <div>
                             <p>Lego Marvel</p>
+                            <p class="description">Lego Marvel 156 pcs, spider man, iron man</p>
                             <div>
                                 <p class="prix"><span class=digits>49</span><span class="exposant">99$</span></p>
                                 <p>Voir l'article</p>
@@ -115,6 +129,7 @@
                         <img src="images/jeu.jpeg" alt="Jeu">
                         <div>
                             <p>Jeu Kanoodle</p>
+                            <p class="description">Jeu pour enfants entre 2-5 ans</p>
                             <div>
                                 <p class="prix"><span class=digits>49</span><span class="exposant">99$</span></p>
                                 <p>Voir l'article</p>
@@ -125,6 +140,7 @@
                         <img src="images/jouets.jpeg" alt="Jouet">
                         <div>
                             <p>Tour d'anneaux en plastique</p>
+                            <p class="description">Tour d'anneaux, boîte d'aliment, vehicule</p>
                             <div>
                                 <p class="prix"><span class=digits>49</span><span class="exposant">99$</span></p>
                                 <p>Voir l'article</p>
@@ -135,6 +151,7 @@
                         <img src="images/lego.jpg" alt="Lego">
                         <div>
                             <p>Lego Marvel</p>
+                            <p class="description">Lego Marvel 156 pcs, spider man, iron man</p>
                             <div>
                                 <p class="prix"><span class=digits>49</span><span class="exposant">99$</span></p>
                                 <p>Voir l'article</p>
