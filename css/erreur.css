@@ -1,0 +1,34 @@
+/* 
+    Feuille de style pour TP final 
+
+    * Auteurs: Clovis Gauthier & Ryan Ao
+    * Remise: 15 décembre sur LÉA
+    * Présentation: ? décembre 2023 (~11h20)
+*/
+main {
+    height: 57vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* 
+    Message d'erreur
+*/
+main span, main h2 {
+    color: var(--couleurTextePrincipal);
+}
+
+main span {
+    font-size: 30px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        height: 50vh;
+    }
+}

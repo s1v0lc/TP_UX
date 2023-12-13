@@ -9,55 +9,49 @@
 /* 
     Main
  */
-
- main{
+ main {
     margin: 0 auto;
     width: 80vw;
     padding-top: 5vh;
 }
 
-/* Carousel */
-
-main div.carousel{
+/* carroussel */
+main div.carroussel {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-div.carousel img{
-    width: 50vw;
-    height: 15vh;
-    object-fit: contain;
-}
-
-div div img{
-    width: 25vw;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-#carousel{
+#carroussel {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-/* Article */
+div.carroussel img {
+    width: 60vw;
+    height: 50vh;
+    object-fit: contain;
+    box-shadow: 0px 3px 5px 2px var(--couleurOmbre);
+    margin-bottom: 20px;
+}
 
-.article{
+div div img {
+    width: 25vw;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    box-shadow: 0px 3px 5px 2px var(--couleurOmbre);
+}
+
+/* Article */
+.article {
     display: flex;
     flex-direction: column;
     padding-top: 5vh;
 }
 
-.produit{
-    display: flex;
-    flex-direction: column;
-    padding-top: 2.5vh;
-}
-
-.titreSection{
+.titreSection {
     display: flex;
     justify-content: space-between;
     padding: 15px 0;
@@ -66,26 +60,34 @@ div div img{
     font-family: var(--policeBtn);
 }
 
-.titreSection > span > a{
+.titreSection p:first-child { /*"meilleur vendeur" et "produit suggérés"*/
+    color: var(--couleurTextePrincipal);
+    font-size: 1.4rem;
+}
+
+.titreSection>p>a:hover { /*hover sur "voir plus"*/
     text-decoration: underline;
 }
 
-.item{
+.produits { /*regroupe les items*/
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 2.5vh; */
+    padding: 2.5vh 0;
+}
+
+.item {
     display: flex;
     align-items: center;
     padding: 1.5vh 0;
-    border-bottom: 1.5px solid var(--couleurLogInSurvol);
+    border-bottom: 1.5px solid var(--couleurBordure);
 }
 
-.item>div{
+.item>div { /*infos de l'item*/
     width: 100%;
 }
 
-.item>div>p:first-child{
-    font-size: x-large;
-}
-
-.item>div>p{
+.item>div>p { /*nom et description*/
     text-align: center;
     margin-bottom: 1.5vh;
     font-size: clamp(1rem, 2.5vw, 1.4rem);
@@ -93,21 +95,28 @@ div div img{
     overflow: hidden;
 }
 
-.item div>div{
+.item>div>p:first-child { /*nom*/
+    font-size: x-large;
+    font-weight: bold;
+    color: var(--couleurTextePrincipal);
+}
+
+.description {
+    color: var(--couleurTexteSecondaire);
+}
+
+.item div>div { /*prix et bouton*/
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.item div>p[class="prix"]~p{ /* Bouton */
-    text-align: center;
-    border-radius: 15px;
-    padding: 15px 20px;
-    background-color: var(--couleurBouton);
-    color: var(--couleurFond);
-    cursor: pointer;
-    user-select: none;
+.prix {
+    color: var(--couleurTextePrincipal);
+    font-size: 1.5rem;
+    /* font-weight: ; */
+    margin-bottom: 1.5vh;
 }
 
 .exposant { /*49.[99$]*/
@@ -115,22 +124,50 @@ div div img{
     font-size: 1rem;
 }
 
-.prix {
-    color: var(--couleurTextePrincipal);
-    font-size: 1.5rem;
+.item div>p[class="prix"]~p { /* Bouton */
+    position: relative;
+    border-radius: 15px;
+    padding: 10px 15px;
+    background-color: var(--couleurBouton);
+    border: 4px solid var(--couleurBouton);
+    color: var(--couleurFond);
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
 }
 
-.description{
-    color: grey;
+.item div>p[class="prix"]~p:hover { /*hover sur le bouton*/
+    color: var(--couleurBouton);
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 4px solid var(--couleurBouton);
 }
 
-/* Next & previous buttons */
+.item div>p[class="prix"]~p:hover:before { /*before sur le bouton pour l'animation*/
+    content: "Voir l'article";
+    background-color: white;
+    text-align: center;
+    padding-top:  13px;
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    top: -10%;
+    font-weight: bold;
+    font-size: 1rem;
+    animation: animerBouton 1.2s reverse ease-in-out;
+    z-index: 2;
+}
+
+/* flèches */
 .prev, .next {
     cursor: pointer;
     width: auto;
     height: 100%;
     padding: 8px;
-    color: black;
+    color: var(--couleurTextePrincipal);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -138,8 +175,13 @@ div div img{
     user-select: none;
 }
 
+.prev {
+    border-radius: 3px 0px 0px 3px;
+}
+
 .prev:hover, .next:hover {
-    background-color: grey;
+    background-color: var(--couleurTextePrincipal);
+    color: var(--couleurFond);
 }
 
 #dot {
@@ -151,14 +193,14 @@ div div img{
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: var(--couleurTexteSecondaire);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-    background-color: #717171;
+    background-color: var(--couleurTextePrincipal);
 }
  /* 
     Requêtes Médias
@@ -166,72 +208,75 @@ div div img{
  @media screen and (min-width: 992px) {
     /* Main grand écran */
     
-    main{
+    main {
         margin: 0 auto;
         width: 80vw;
         padding-top: 5vh;
     }
     
-    main div.carousel{
+    main div.carroussel {
         display: flex;
         justify-content: space-between;
     }
     
-    div.carousel img{
+    div.carroussel img {
         border-radius: 0;
         width: 15vw;
         height: 15vh;
         object-fit: contain;
     }
     
-    div div img{
+    div div img {
         width: 9vw;
+        height: 10vw;
         object-fit: contain;
+        margin-bottom: 5px
     }
 
-    .produit{
+    .article {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 5vh;
+    }
+
+    .produits {
         width: 35vw;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding-top: 2.5vh;
     }
-
-    .article{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-top: 5vh;
-    }
     
-    .titreSection{
+    .titreSection {
         display: flex;
         justify-content: space-between;
         border-bottom: solid 1.5px var(--couleurLogInSurvol);
         font-weight: bold;
     }
 
-    .titreSection > span > a{
+    .titreSection>span>a {
         text-decoration: underline;
+        background-color: red;
     }
     
-    .item{
-        width: 10vw;
+    .item {
+        width: 11vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         text-align: center;
-        padding: 5px;
+        padding: 10px 5px;
         border: 1px solid var(--couleurLogInSurvol);
     }
 
-    .item div>div{
+    .item div>div {
         width: 100%;
         display: block;
     }
 
-    .item>div>p:nth-child(2){
+    .item>div>p:nth-child(2) {
         font-size: small;
     }
 }

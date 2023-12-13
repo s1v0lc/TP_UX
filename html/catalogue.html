@@ -8,10 +8,10 @@
     <!-- Importation Material Symbols -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <!-- Importation feuille de style-->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/catalogue.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/catalogue.css">
+    <link rel="stylesheet" href="../css/animations.css">
 </head>
 <body>
     <header>
@@ -24,13 +24,13 @@
                 </label>
                 <input id="btn" type="checkbox">
             </div>
-            <a class="logo" href="index.html">
-                <img src="images/logo.png" alt="">
+            <a class="logo" href="../index.html">
+                <img src="../images/logo.png" alt="">
             </a>
             <div class="barreRecherche">
                 <span class="loupe material-symbols-outlined">search</span>
             </div>
-            <a class="rabais" href="#">
+            <a class="rabais" href="catalogue.html">
                 <span class="material-symbols-outlined">sell</span>
                 <span>ESCOMPTES & NOUVEAUTÉS</span>
             </a>
@@ -38,7 +38,7 @@
                 <span class="material-symbols-outlined">shopping_cart</span>
                 <span>PANIER</span>
             </a>
-            <a class="logIn" href="#">
+            <a class="logIn" href="erreur.html">
                 <span class="material-symbols-outlined">account_circle</span>
                 <span>INSCRIPTION / CONNEXION</span>
             </a>
@@ -82,22 +82,35 @@
         <!-- Filtres -->
         <section class="filtres">
             <h2>Filtrer</h2>
-            <div class="c">
+            <div class="boite">
                 <h3>Par prix :</h3>
                 <div class="diagrame">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
+                <div class="etendue">
+                    <p>0$</p>
+                    <p>100$</p>
+                    <p>1000$</p>
+                </div>
                 <h3>Par marque :</h3>
-                <p>Bakugan</p>
-                <p>Beyblade</p>
-                <p>Lego</p>
-                <p>Nerf</p>
-                <p>Transformers</p>
-                <p>...</p>
+                <a href="#">Bakugan</a>
+                <a href="#">Beyblade</a>
+                <a href="#">Lego</a>
+                <a href="#">Nerf</a>
+                <a href="#">Transformers</a>
+                <a href="#">...</a>
                 <h3>Par âge :</h3>
-                <div class="diagrame"></div>
+                <div class="diagrame">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="etendue">
+                    <p>1-</p>
+                    <p>18+</p>
+                </div>
             </div>
         </section>
         <!-- Liste des produits -->
@@ -124,7 +137,7 @@
                 </div>
             </section>
             <section class="produit">
-                <img src="images/cactus.jpg" alt="">
+                <img src="../images/cactus.jpg" alt="">
                 <div class="info">
                     <p class="titre">Cactus dansant</p>
                     <div class="prixBouton">
@@ -134,7 +147,7 @@
                 </div>
             </section>
             <section class="produit">
-                <img src="images/cactus.jpg" alt="">
+                <img src="../images/cactus.jpg" alt="">
                 <div class="info">
                     <p class="titre">Cactus dansant</p>
                     <div class="prixBouton">
@@ -144,7 +157,7 @@
                 </div>
             </section>
             <section class="produit">
-                <img src="images/cactus.jpg" alt="">
+                <img src="../images/cactus.jpg" alt="">
                 <div class="info">
                     <p class="titre">Cactus dansant</p>
                     <div class="prixBouton">
@@ -173,7 +186,7 @@
         </div>
     </footer>
     <!-- Importation du Script -->
-    <script src="js/main.js">
+    <script src="../js/main.js">
     </script>
 </body>
 </html>

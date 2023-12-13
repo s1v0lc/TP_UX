@@ -30,15 +30,15 @@
             <div class="barreRecherche">
                 <span class="loupe material-symbols-outlined">search</span>
             </div>
-            <a class="rabais" href="index.html">
+            <a class="rabais" href="html/catalogue.html">
                 <span class="material-symbols-outlined">sell</span>
                 <span>ESCOMPTES & NOUVEAUTÉS</span>
             </a>
-            <a class="panier" href="panier.html">
+            <a class="panier" href="html/panier.html">
                 <span class="material-symbols-outlined">shopping_cart</span>
                 <span>PANIER</span>
             </a>
-            <a class="logIn" href="#">
+            <a class="logIn" href="html/erreur.html">
                 <span class="material-symbols-outlined">account_circle</span>
                 <span>INSCRIPTION / CONNEXION</span>
             </a>
@@ -56,16 +56,16 @@
             </ul>
         </nav>
     </header>
-        <!-- Contenu de la page -->
+    <!-- Contenu de la page -->
     <main>
         <!-- caroussel -->
-        <div class="carousel">
+        <div class="carroussel">
             <a class="prev" onclick="plusSlides(-1)">❮</a> <!-- flèche gauche -->
-            <div id="carousel">
-                <img class="img" src="images/jeu.jpeg" alt="Jeu">
-                <img class="img" src="images/jouets.jpeg" alt="Jouet">
-                <img class="img" src="images/lego.jpg" alt="Lego">
-                <img class="img" src="images/pokemon.jpg" alt="Pokemon">
+            <div id="carroussel">
+                <img class="imgCarroussel" src="images/jeu.jpeg" alt="Jeu">
+                <img class="imgCarroussel" src="images/jouets.jpeg" alt="Jouet">
+                <img class="imgCarroussel" src="images/lego.jpg" alt="Lego">
+                <img class="imgCarroussel" src="images/pokemon.jpg" alt="Pokemon">
             </div>
             <a class="next" onclick="plusSlides(1)">❯</a> <!-- flèche droite -->
         </div>
@@ -79,11 +79,12 @@
         <!-- articles recommandés -->
         <div class="article">
             <div>
+                <!-- Meilleur Vendeur -->
                 <div class="titreSection">
                     <p>Meilleur vendeur</p>
-                    <p><a href="">Voir plus</a></p>
+                    <p><a href="html/catalogue.html">Voir plus</a></p>
                 </div>
-                <div class="produit">
+                <div class="produits">
                     <div class="item">
                         <img src="images/jeu.jpeg" alt="Jeu">
                         <div>
@@ -99,7 +100,7 @@
                         <img src="images/jouets.jpeg" alt="Jouet">
                         <div>
                             <p>Tour d'anneaux en plastique</p>
-                            <p class="description">Tour d'anneaux, boîte d'aliment, vehicule</p>
+                            <p class="description">Tour d'anneaux, boîte d'aliment, véhicule</p>
                             <div>
                                 <p class="prix"><span class=digits>49</span><span class="exposant">99$</span></p>
                                 <p>Voir l'article</p>
@@ -120,11 +121,12 @@
                 </div>
             </div>
             <div>
+                <!-- Articles suggérés -->
                 <div class="titreSection">
-                    <p>Article suggéré</p>
-                <p><a href="">Voir plus</a></p>
+                    <p>Articles suggérés</p>
+                <p><a href="html/catalogue.html">Voir plus</a></p>
                 </div>
-                <div class="produit">
+                <div class="produits">
                     <div class="item">
                         <img src="images/jeu.jpeg" alt="Jeu">
                         <div>
@@ -140,7 +142,7 @@
                         <img src="images/jouets.jpeg" alt="Jouet">
                         <div>
                             <p>Tour d'anneaux en plastique</p>
-                            <p class="description">Tour d'anneaux, boîte d'aliment, vehicule</p>
+                            <p class="description">Tour d'anneaux, boîte d'aliment, véhicule</p>
                             <div>
                                 <p class="prix"><span class=digits>49</span><span class="exposant">99$</span></p>
                                 <p>Voir l'article</p>
@@ -162,7 +164,7 @@
             </div>
         </div>
     </main>
-        <!-- Pied de la page -->
+    <!-- Pied de page -->
     <footer>
         <div class="footer">
             <div id="about">

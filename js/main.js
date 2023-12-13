@@ -125,8 +125,7 @@ if(btnVue){
 // let icone2 = document.getElementById('vague'); // icône 2
 // // let menu = document.querySelector('nav'); // menu tri
 
-// Carousel
-        
+// Carroussel
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -142,25 +141,27 @@ function currentSlide(n) {
 
 function showSlides(n) {
     let i;
-    let slides = document.getElementsByClassName("img"); // attrappe les images
+    let slides = document.getElementsByClassName("imgCarroussel"); // attrappe les images
     let dots = document.getElementsByClassName("dot"); // attrappe les points
 
-    ////// Pour loop les flèches ////////
-    if (n > slides.length) { // si n est supérieur au nombres d'images
-        slideIndex = 1;
-    }    
-    if (n < 1) { // si n est inférieur à 1
-        slideIndex = slides.length;
-    }
-    ////// Pour display la bonne image /////
+    if(slides.length > 0) { // Si on est sur la bonne page
+        ////// Pour loop les flèches ////////
+        if (n > slides.length) { // si n est supérieur au nombres d'images
+            slideIndex = 1;
+        }    
+        if (n < 1) { // si n est inférieur à 1
+            slideIndex = slides.length;
+        }
+        ////// Pour display la bonne image /////
 
-    for (i = 0; i < slides.length; i++) { // toutes les images sont cachées
-        slides[i].style.display = "none";  
+        for (i = 0; i < slides.length; i++) { // toutes les images sont cachées
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) { // la classe active est retirée
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        // puis l'image avec le bon index est affichée
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
     }
-    for (i = 0; i < dots.length; i++) { // la classe active est retirée
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    // puis l'image avec le bon index est affichée
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
 }

@@ -20,14 +20,15 @@ img{
 /* Variables personnalisées */
 :root {
     --couleurFond: #ffffff;
+    --couleurFond2: #D9BDE6;
     --couleurTextePrincipal: #8428AD;
     --couleurTexteSecondaire: #AE86B7;
-    --couleurFond2: #D9BDE6;
     --couleurBordure: #707070;
     --couleurBouton: #31488A;
     --couleurPanierSurvol: #000000;
     --couleurLogInSurvol: #AE86B7;
     --couleurRabais: red;
+    --couleurOmbre: #bbbbbb;
 }
 /* Paramètres police material symbols */
 .material-symbols-outlined {
@@ -72,7 +73,7 @@ header {
 
 .menuBurger #ouvrir, .menuBurger #fermer { /*icônes*/
     font-size: 3rem;
-    color: white;
+    color: var(--couleurFond);
     cursor: pointer;
 }
 
@@ -317,11 +318,11 @@ h3{
         padding-bottom: 10px;
     }
 
-    #apdn{
+    #about{
         width: 60%;
     }
 
-    #apdn~div{
+    #about~div{
         display: flex;
         flex-direction: column;
         align-items: flex-end;
