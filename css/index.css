@@ -1,9 +1,9 @@
 /* 
-    Feuille de style pour TP final 
+    Feuille de style pour la page index 
 
     * Auteurs: Clovis Gauthier & Ryan Ao
     * Remise: 15 décembre sur LÉA
-    * Présentation: ? décembre 2023 (~11h20)
+    * Présentation: 19 décembre 2023 (~11h20)
 */
 
 /* 
@@ -24,14 +24,13 @@ main div.carroussel {
 
 #carroussel {
     display: flex;
-    width: 100%;
     justify-content: center;
     align-items: center;
 }
 
 div.carroussel img {
     width: 60vw;
-    height: 50vh;
+    height: 55vh;
     object-fit: contain;
     box-shadow: 0px 3px 5px 2px var(--couleurOmbre);
     margin-bottom: 20px;
@@ -80,7 +79,7 @@ div div img {
     display: flex;
     align-items: center;
     padding: 1.5vh 0;
-    border-bottom: 1.5px solid var(--couleurBordure);
+    border-bottom: 1.5px solid var(--couleurFond2);
 }
 
 .item>div { /*infos de l'item*/
@@ -215,15 +214,14 @@ div div img {
     }
     
     main div.carroussel {
-        display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     
     div.carroussel img {
         border-radius: 0;
-        width: 15vw;
-        height: 15vh;
-        object-fit: contain;
+        width: 50vw;
+        height: 40vh;
+        object-fit: cover;
     }
     
     div div img {

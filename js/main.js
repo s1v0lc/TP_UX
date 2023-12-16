@@ -36,6 +36,26 @@ nav.addEventListener("animationiteration", function(event) {
     }
 });
 
+// Gestions des sous-menus de navigation
+let onglets = document.querySelectorAll('li');
+let sousMenu = document.querySelectorAll('.sousMenu div');
+// ajout d'un écouteur et d'un index à chaque onglet
+for (let i = 0; i < onglets.length ; i++) {
+    onglets[i].addEventListener("mouseenter", afficherMenu);
+    onglets[i].addEventListener("mouseleave", cacherMenu);
+    onglets[i].index = i;
+    // ajout de l'index correspondant au sous-menu
+    sousMenu[i].index = i;
+}
+function afficherMenu(event) {
+    if(window.innerWidth>992) { //si on est sur pc *refresh*
+        sousMenu[event.target.index].style.display = "block";
+    }
+}
+function cacherMenu(event) {
+    sousMenu[event.target.index].style.display = "none";
+}
+
 //// Gestion des articles dans le panier ////
 let btnsPlus = document.querySelectorAll(".boiteNb p:nth-child(3)"); // bouton pour ajouter un item
 let btnsMoins = document.querySelectorAll(".boiteNb p:nth-child(1)"); // bouton pour enlever un item
@@ -162,6 +182,7 @@ function currentSlide(n) {
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("imgCarroussel"); // attrappe les images
+    let slidesPc = document.getElementsByClassName("pc"); // attrappe les images pc
     let dots = document.getElementsByClassName("dot"); // attrappe les points
 
     if(slides.length > 0) { // Si on est sur la bonne page
@@ -177,11 +198,18 @@ function showSlides(n) {
         for (i = 0; i < slides.length; i++) { // toutes les images sont cachées
             slides[i].style.display = "none";  
         }
+        for (const slide of slidesPc) {
+            slide.style.display = "none";  
+        }
         for (i = 0; i < dots.length; i++) { // la classe active est retirée
             dots[i].className = dots[i].className.replace(" active", "");
         }
         // puis l'image avec le bon index est affichée
-        slides[slideIndex-1].style.display = "block";  
+        if(window.innerWidth > 992) {
+            slidesPc[slideIndex-1].style.display = "block";  
+        } else {
+            slides[slideIndex-1].style.display = "block";  
+        }
         dots[slideIndex-1].className += " active";
     }
 }

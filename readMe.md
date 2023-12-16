@@ -1,16 +1,6 @@
-Complété:
-    Menu de navigation,
-    Footer,
-    Panier
-
-
-En cours:
-    Accueil,
-    Catalogue
-    
-À faire:
-    Régler bug d'animation de fermeture,
-    sous menu lors d'un hover sur pc,
-    animation d'interactions,
-    barre de recherche fonctionnelle,
-    rabais!
+   Fonctionnalité à améliorer/implémenter:
+   sous menu lors d'un hover sur pc,
+   une page présantant un article individuel,
+   des rabais affichés comme sur notre maquette,
+   barre de recherche, page de connexion,
+   etc.

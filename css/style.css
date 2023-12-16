@@ -3,7 +3,7 @@
 
     * Auteurs: Clovis Gauthier & Ryan Ao
     * Remise: 15 décembre sur LÉA
-    * Présentation: ? décembre 2023 (~11h20)
+    * Présentation: 19 décembre 2023 (~11h20)
 */
 
 /* Réinitialisation supplémentaire */
@@ -57,7 +57,6 @@ body {
 */
 header {
     background-color: var(--couleurTextePrincipal);
-    /* width: 100vw; */
     padding: 20px 5vw;
     position: sticky;
     top: 0;
@@ -127,10 +126,10 @@ header {
 
 .logIn {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     top: 71%;
-    right: 5vw;
+    right: 1vw;
     color: var(--couleurFond);
     cursor: pointer;
 }
@@ -229,6 +228,42 @@ li:hover::before {
 li:hover a {
     color: var(--couleurFond);
 }
+/* Sous-menu apparraissant par JS */
+.sousMenu div {
+    display: none;
+    position: absolute;
+    background-color: var(--couleurFond2);
+    border: 2px solid var(--couleurTextePrincipal);
+    color: var(--couleurTextePrincipal);
+    width: 100px;
+    /* height: 100px; */
+}
+/* On n'a pas trouvé de manière de les placer automatiquement */
+.sousMenu div:first-child {
+    left: 6vw;
+}
+.sousMenu div:nth-child(2) {
+    left: 16vw;
+}
+.sousMenu div:nth-child(3) {
+    left: 32vw;
+}
+.sousMenu div:nth-child(4) {
+    left: 43vw;
+}
+.sousMenu div:nth-child(5) {
+    left: 51vw;
+}
+.sousMenu div:nth-child(6) {
+    left: 58vw;
+}
+.sousMenu div:nth-child(7) {
+    left: 66vw;
+}
+
+li:hover .test {
+    display: block;
+}
 /* 
     Footer
  */
@@ -276,12 +311,21 @@ h3{
         position: absolute;
     }
 
-    .logIn span:first-of-type{ /*icône logIn*/
+    .logIn span:first-of-type { /*icône logIn*/
         font-size: 2rem;
+    }
+
+    .logIn span:last-of-type {
+        width: 15vw;
+        text-align: left;
     }
 
     .rabais span:last-of-type, .panier span:last-of-type, .logIn span:last-of-type { /*texte*/
         display: flex;
+    }
+
+    .rabais {
+        width: 22vw;
     }
 
     nav {
