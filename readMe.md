@@ -1,4 +1,4 @@
-### Version finale du projet d'amélioration de site web
+# Version finale du projet d'amélioration de site web
 ## cours 3C1 - Design d'interactivité (UI/UX)
 ## Site original : https://divertioz.com/
 
